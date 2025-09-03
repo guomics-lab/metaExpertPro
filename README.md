@@ -17,7 +17,7 @@ It is recommended to have at least 128 GB RAM and 50 GB storage space for one DD
 First, download the metaExpertPro container from Docker Hub.
 
 ```
-$ docker pull guomics2017/metaexpertpro:v2.4
+$ docker pull guomics2017/metaexpertpro:v2.5
 ```
 
 ## Part 1: run metaExpertPro for DDA-MS-based spectral library generation and DIA-MS-based peptide and protein quantification.
@@ -37,7 +37,7 @@ The file format is required as follows:
 ### Get help with all command line parameters:
 
 ```
-docker run -it --rm -u $(id -u):$(id -g) guomics2017/metaexpertpro:v2.4 sh /metaEx/src/00.DDAspectrallib/00.DDA.DIA.sh --help
+docker run -it --rm -u $(id -u):$(id -g) guomics2017/metaexpertpro:v2.5 sh /metaEx/src/00.DDAspectrallib/00.DDA.DIA.sh --help
 ```
 
 ### Default parameter settings for DDA and DIA database search
@@ -69,7 +69,7 @@ docker run -it --rm \
 -v /workdir/metaEx/fasta/:/metaEx/fasta/ \
 -v /workdir/metaEx/Results/:/metaEx/Results/ \
 -v /path/to/fragpipe/:/metaEx/software/fragpipe20.0/ \
-guomics2017/metaexpertpro:v2.4 sh /metaEx/src/00.DDAspectrallib/00.DDA.DIA.sh \
+guomics2017/metaexpertpro:v2.5 sh /metaEx/src/00.DDAspectrallib/00.DDA.DIA.sh \
 --total_dir /metaEx --project_name xxx --fragpipe_switch xxx --diann_switch xxx --fasta_name xxx --dia_threads xxx \
 --fragpipe_path /metaEx/software/fragpipe20.0 --db_split xxx
 ```
@@ -105,7 +105,7 @@ Sample label input file is required as .csv format and the example content is sh
 ### Get help with all command line parameters:
 
 ```
-docker run -it --rm -u $(id -u):$(id -g) guomics2017/metaexpertpro:v2.4 sh /metaEx/src/02.Annotation/01.annotation.sh --help
+docker run -it --rm -u $(id -u):$(id -g) guomics2017/metaexpertpro:v2.5 sh /metaEx/src/02.Annotation/01.annotation.sh --help
 ```
 
 ### Default parameter settings for annotation and quantification
@@ -120,7 +120,7 @@ docker run -it --rm \
 -v /workdir/metaEx/sampleLabel/:/metaEx/sampleLabel/ \
 -v /workdir/metaEx/Results/:/metaEx/Results/ \
 -v /workdir/metaEx/software/eggnog-mapper/eggnog-mapper-data/:/metaEx/software/eggnog-mapper/eggnog-mapper-data/ \
-guomics2017/metaexpertpro:v2.4 sh /metaEx/src/02.Annotation/01.annotation.sh --total_dir /metaEx --project_name xxx --sample_label /metaEx/sampleLabel/xxx \
+guomics2017/metaexpertpro:v2.5 sh /metaEx/src/02.Annotation/01.annotation.sh --total_dir /metaEx --project_name xxx --sample_label /metaEx/sampleLabel/xxx \
 --database xxx --input_pr_mat_name xxx --input_pg_mat_name xxx --anno_threads xxx --unipept_switch xxx --eggnog_switch xxx --kegg_switch xxx
 ```
 ### Results
